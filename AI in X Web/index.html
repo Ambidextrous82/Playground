@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI in X Study — 5개 도메인의 결합으로 만드는 AI 시너지</title>
+    <meta
+      name="description"
+      content="컨설팅, 연구, 개발, 투자, 1인 기업 — 서로 다른 5개 도메인의 실무자와 연구자가 모여 AI 실전 활용 사례를 공유하고 주제별 딥다이브를 진행하는 AI in X 정기 스터디 공식 홈페이지입니다."
+    />
+    <meta
+      name="keywords"
+      content="AI in X, AI 스터디, 컨설팅 AI, 연구용 에이전트, 개발 하네스, 투자 업무 자동화, 퍼스널브랜딩, AI Agent"
+    />
+    <meta name="theme-color" content="#051C2C" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="AI in X Study" />
+    <meta
+      property="og:title"
+      content="AI in X Study — 5개 도메인의 결합으로 만드는 AI 시너지"
+    />
+    <meta
+      property="og:description"
+      content="컨설팅·연구·개발·투자·1인 기업 5개 도메인의 실무자와 연구자가 모여 AI 실전 활용 사례를 공유하고 주제별 딥다이브를 진행합니다."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="AI in X Study — 5개 도메인의 결합으로 만드는 AI 시너지"
+    />
+    <meta
+      name="twitter:description"
+      content="5개 도메인의 결합으로 만드는 AI 시너지 · Cross-Domain AI Study Group"
+    />
+
+    <!-- Favicon (Relative Path for GitHub Pages Compatibility) -->
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+    <!-- Pretendard Variable (Korean & UI Sans-serif) -->
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+
+    <!-- Newsreader (Editorial Serif) & JetBrains Mono (Indices / Metadata) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet (Relative Path) -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">본문 바로가기</a>
+
+    <!-- Global Sticky Header -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a href="#hero" class="brand" aria-label="AI in X Study 홈으로 이동">
+          <span class="brand__wordmark">
+            AI in <em class="brand__x">X</em>
+          </span>
+          <span class="brand__divider" aria-hidden="true"></span>
+          <span class="brand__sub">STUDY GROUP</span>
+        </a>
+
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <ul class="site-nav__list">
+            <li>
+              <a
+                href="#purpose"
+                class="site-nav__link"
+                data-nav-section="purpose"
+                >스터디 목적</a
+              >
+            </li>
+            <li>
+              <a
+                href="#members"
+                class="site-nav__link"
+                data-nav-section="members"
+                >멤버 소개</a
+              >
+            </li>
+            <li>
+              <a
+                href="#topics"
+                class="site-nav__link"
+                data-nav-section="topics"
+                >스터디 주제</a
+              >
+            </li>
+          </ul>
+          <a
+            href="#join-us"
+            class="btn btn--header-cta"
+            data-nav-section="join-us"
+            >Join Us</a
+          >
+        </nav>
+
+        <button
+          type="button"
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span class="mobile-menu-toggle__line" aria-hidden="true"></span>
+          <span class="mobile-menu-toggle__line" aria-hidden="true"></span>
+          <span class="mobile-menu-toggle__line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" hidden></div>
+    <aside
+      class="mobile-nav"
+      id="mobile-nav"
+      role="dialog"
+      aria-modal="true"
+      aria-label="모바일 메뉴"
+      hidden
+    >
+      <div class="mobile-nav__header">
+        <span class="brand__wordmark">
+          AI in <em class="brand__x">X</em>
+        </span>
+        <button
+          type="button"
+          class="icon-close-btn"
+          id="mobile-nav-close"
+          aria-label="메뉴 닫기"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 5L15 15M15 5L5 15"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="square"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav__body" aria-label="모바일 섹션 메뉴">
+        <ul class="mobile-nav__list">
+          <li>
+            <a href="#purpose" class="mobile-nav__link" data-mobile-nav-link>
+              <span class="mobile-nav__kicker">01 · PURPOSE</span>
+              <span class="mobile-nav__label">스터디 목적</span>
+            </a>
+          </li>
+          <li>
+            <a href="#members" class="mobile-nav__link" data-mobile-nav-link>
+              <span class="mobile-nav__kicker">02 · MEMBERS</span>
+              <span class="mobile-nav__label">멤버 소개</span>
+            </a>
+          </li>
+          <li>
+            <a href="#topics" class="mobile-nav__link" data-mobile-nav-link>
+              <span class="mobile-nav__kicker">03 · TOPICS</span>
+              <span class="mobile-nav__label">스터디 주제</span>
+            </a>
+          </li>
+          <li>
+            <a href="#join-us" class="mobile-nav__link" data-mobile-nav-link>
+              <span class="mobile-nav__kicker">04 · JOIN US</span>
+              <span class="mobile-nav__label">참여 안내 &amp; 지원</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mobile-nav__footer">
+        <p class="mobile-nav__meta">Cross-Domain AI Study Group</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="hero" id="hero" aria-labelledby="hero-heading">
+        <div class="container hero__container">
+          <div class="hero__grid">
+            <!-- Left Editorial Copy (7 columns) -->
+            <div class="hero__content">
+              <h1 class="hero__title" id="hero-heading">
+                <span class="hero__brand-lead">
+                  AI in <em class="hero__brand-x">X</em>
+                </span>
+                <span class="hero__headline">
+                  5개 도메인의 결합으로<br />만드는 AI 시너지
+                </span>
+              </h1>
+
+              <p class="hero__lead">
+                컨설팅, 연구, 개발, 투자, 1인 기업 — 서로 다른 5개 영역(X)의
+                실무자와 연구자가 모여 AI 실전 활용 사례를 공유하고 주제별
+                딥다이브를 진행하는 정기 스터디입니다.
+              </p>
+
+              <div class="hero__actions">
+                <a href="#join-us" class="btn btn--primary">
+                  <span>Join Us — 스터디 참여하기</span>
+                  <span class="btn__arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#topics" class="btn btn--secondary">
+                  <span>분야별 주제 보기</span>
+                  <span class="btn__arrow btn__arrow--down" aria-hidden="true"
+                    >↓</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Domain Convergence Matrix Panel (5 columns) -->
+            <div class="hero__visual surface-navy">
+              <div class="matrix-panel">
+                <div class="matrix-panel__header">
+                  <span class="matrix-panel__title">DOMAIN CONVERGENCE</span>
+                  <span class="matrix-panel__badge">5 + X MODEL</span>
+                </div>
+
+                <div class="matrix-panel__diagram">
+                  <svg
+                    id="domain-matrix-svg"
+                    class="matrix-svg"
+                    viewBox="0 0 420 300"
+                    role="group"
+                    aria-label="AI 코어를 중심으로 5개 도메인과 확장 도메인 X가 연결된 시너지 다이어그램"
+                  >
+                    <!-- Concentric Reference Rings & Crosshair -->
+                    <g class="matrix-svg__grid" aria-hidden="true">
+                      <circle
+                        cx="210"
+                        cy="150"
+                        r="46"
+                        fill="none"
+                        stroke="rgba(255, 255, 255, 0.12)"
+                        stroke-width="1"
+                      />
+                      <circle
+                        cx="210"
+                        cy="150"
+                        r="90"
+                        fill="none"
+                        stroke="rgba(255, 255, 255, 0.14)"
+                        stroke-width="1"
+                        stroke-dasharray="3 4"
+                      />
+                      <line
+                        x1="210"
+                        y1="52"
+                        x2="210"
+                        y2="248"
+                        stroke="rgba(255, 255, 255, 0.06)"
+                        stroke-width="1"
+                      />
+                      <line
+                        x1="112"
+                        y1="150"
+                        x2="308"
+                        y2="150"
+                        stroke="rgba(255, 255, 255, 0.06)"
+                        stroke-width="1"
+                      />
+                    </g>
+
+                    <!-- Spokes Connecting Core to Outer Nodes -->
+                    <g class="matrix-svg__links" aria-hidden="true">
+                      <line
+                        class="matrix-link"
+                        data-node-link="hy"
+                        x1="210"
+                        y1="150"
+                        x2="210"
+                        y2="60"
+                      />
+                      <line
+                        class="matrix-link"
+                        data-node-link="research"
+                        x1="210"
+                        y1="150"
+                        x2="288"
+                        y2="105"
+                      />
+                      <line
+                        class="matrix-link"
+                        data-node-link="na"
+                        x1="210"
+                        y1="150"
+                        x2="288"
+                        y2="195"
+                      />
+                      <line
+                        class="matrix-link"
+                        data-node-link="yh"
+                        x1="210"
+                        y1="150"
+                        x2="210"
+                        y2="240"
+                      />
+                      <line
+                        class="matrix-link"
+                        data-node-link="hs"
+                        x1="210"
+                        y1="150"
+                        x2="132"
+                        y2="195"
+                      />
+                      <line
+                        class="matrix-link matrix-link--open"
+                        data-node-link="open"
+                        x1="210"
+                        y1="150"
+                        x2="132"
+                        y2="105"
+                      />
+                    </g>
+
+                    <!-- Central AI Core -->
+                    <g class="matrix-core" aria-hidden="true">
+                      <circle
+                        cx="210"
+                        cy="150"
+                        r="31"
+                        fill="#0D2B42"
+                        stroke="#7BA4FF"
+                        stroke-width="1.5"
+                      />
+                      <text
+                        x="210"
+                        y="157"
+                        text-anchor="middle"
+                        class="matrix-core__text"
+                      >
+                        AI
+                      </text>
+                    </g>
+
+                    <!-- 01 Consulting (Top, -90deg) -->
+                    <g
+                      class="matrix-node"
+                      data-node-id="hy"
+                      tabindex="0"
+                      role="button"
+                      aria-label="01 Consulting 조하영 프로필 열기"
+                    >
+                      <circle
+                        class="matrix-node__halo"
+                        cx="210"
+                        cy="60"
+                        r="16"
+                      />
+                      <circle
+                        class="matrix-node__dot"
+                        cx="210"
+                        cy="60"
+                        r="7"
+                      />
+                      <text
+                        x="210"
+                        y="24"
+                        text-anchor="middle"
+                        class="matrix-node__code"
+                      >
+                        01
+                      </text>
+                      <text
+                        x="210"
+                        y="39"
+                        text-anchor="middle"
+                        class="matrix-node__label"
+                      >
+                        Consulting
+                      </text>
+                    </g>
+
+                    <!-- 02 Research (Top-Right, -30deg) -->
+                    <g
+                      class="matrix-node"
+                      data-node-id="research"
+                      tabindex="0"
+                      role="button"
+                      aria-label="02 Research 주제 보기"
+                    >
+                      <circle
+                        class="matrix-node__halo"
+                        cx="288"
+                        cy="105"
+                        r="16"
+                      />
+                      <circle
+                        class="matrix-node__dot"
+                        cx="288"
+                        cy="105"
+                        r="7"
+                      />
+                      <text
+                        x="306"
+                        y="101"
+                        text-anchor="start"
+                        class="matrix-node__code"
+                      >
+                        02
+                      </text>
+                      <text
+                        x="306"
+                        y="116"
+                        text-anchor="start"
+                        class="matrix-node__label"
+                      >
+                        Research
+                      </text>
+                    </g>
+
+                    <!-- 03 Development (Bottom-Right, +30deg) -->
+                    <g
+                      class="matrix-node"
+                      data-node-id="na"
+                      tabindex="0"
+                      role="button"
+                      aria-label="03 Development 박노아 프로필 열기"
+                    >
+                      <circle
+                        class="matrix-node__halo"
+                        cx="288"
+                        cy="195"
+                        r="16"
+                      />
+                      <circle
+                        class="matrix-node__dot"
+                        cx="288"
+                        cy="195"
+                        r="7"
+                      />
+                      <text
+                        x="306"
+                        y="191"
+                        text-anchor="start"
+                        class="matrix-node__code"
+                      >
+                        03
+                      </text>
+                      <text
+                        x="306"
+                        y="206"
+                        text-anchor="start"
+                        class="matrix-node__label"
+                      >
+                        Development
+                      </text>
+                    </g>
+
+                    <!-- 04 Investment (Bottom, +90deg) -->
+                    <g
+                      class="matrix-node"
+                      data-node-id="yh"
+                      tabindex="0"
+                      role="button"
+                      aria-label="04 Investment 김영후 프로필 열기"
+                    >
+                      <circle
+                        class="matrix-node__halo"
+                        cx="210"
+                        cy="240"
+                        r="16"
+                      />
+                      <circle
+                        class="matrix-node__dot"
+                        cx="210"
+                        cy="240"
+                        r="7"
+                      />
+                      <text
+                        x="210"
+                        y="269"
+                        text-anchor="middle"
+                        class="matrix-node__code"
+                      >
+                        04
+                      </text>
+                      <text
+                        x="210"
+                        y="284"
+                        text-anchor="middle"
+                        class="matrix-node__label"
+                      >
+                        Investment
+                      </text>
+                    </g>
+
+                    <!-- 05 Solopreneur (Bottom-Left, +150deg) -->
+                    <g
+                      class="matrix-node"
+                      data-node-id="hs"
+                      tabindex="0"
+                      role="button"
+                      aria-label="05 Solopreneur 조한솔 프로필 열기"
+                    >
+                      <circle
+                        class="matrix-node__halo"
+                        cx="132"
+                        cy="195"
+                        r="16"
+                      />
+                      <circle
+                        class="matrix-node__dot"
+                        cx="132"
+                        cy="195"
+                        r="7"
+                      />
+                      <text
+                        x="114"
+                        y="191"
+                        text-anchor="end"
+                        class="matrix-node__code"
+                      >
+                        05
+                      </text>
+                      <text
+                        x="114"
+                        y="206"
+                        text-anchor="end"
+                        class="matrix-node__label"
+                      >
+                        Solopreneur
+                      </text>
+                    </g>
+
+                    <!-- +X Open Track (Top-Left, -150deg) -->
+                    <g
+                      class="matrix-node matrix-node--open"
+                      data-node-id="open"
+                      tabindex="0"
+                      role="button"
+                      aria-label="확장 도메인 X 참여 안내로 이동"
+                    >
+                      <circle
+                        class="matrix-node__halo"
+                        cx="132"
+                        cy="105"
+                        r="16"
+                      />
+                      <circle
+                        class="matrix-node__dot matrix-node__dot--open"
+                        cx="132"
+                        cy="105"
+                        r="7"
+                      />
+                      <text
+                        x="114"
+                        y="101"
+                        text-anchor="end"
+                        class="matrix-node__code matrix-node__code--open"
+                      >
+                        + X
+                      </text>
+                      <text
+                        x="114"
+                        y="116"
+                        text-anchor="end"
+                        class="matrix-node__label matrix-node__label--open"
+                      >
+                        Next Domain
+                      </text>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="matrix-panel__footer">
+                  <p
+                    class="matrix-panel__status"
+                    id="matrix-status"
+                    aria-live="polite"
+                  >
+                    각 도메인 노드를 선택해 참여 분야와 멤버 프로필을 확인하세요.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1: Purpose (Why / What / How) -->
+      <section
+        class="section section--white"
+        id="purpose"
+        aria-labelledby="purpose-heading"
+      >
+        <div class="container">
+          <header class="section-header reveal">
+            <div class="section-header__meta">
+              <p class="section-kicker">01 / PURPOSE</p>
+            </div>
+            <div class="section-header__main">
+              <h2 class="section-title" id="purpose-heading">
+                왜, 무엇을, 어떻게 공부할 것인가?
+              </h2>
+              <p class="section-lead">
+                트렌드 팔로업을 넘어, 각자의 도메인에서 실질적 성과를 만드는
+                깊이 있는 AI 학습 구조를 설계했습니다.
+              </p>
+            </div>
+          </header>
+
+          <div class="purpose-framework reveal" id="purpose-grid">
+            <!-- Populated by js/app.js from PURPOSE_PILLARS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Members (5 + 1 Symmetric Editorial Grid) -->
+      <section
+        class="section section--paper"
+        id="members"
+        aria-labelledby="members-heading"
+      >
+        <div class="container">
+          <header class="section-header reveal">
+            <div class="section-header__meta">
+              <p class="section-kicker">02 / MEMBERS</p>
+            </div>
+            <div class="section-header__main">
+              <h2 class="section-title" id="members-heading">
+                5개 도메인의 결합으로 만드는 AI 시너지
+              </h2>
+              <p class="section-lead">
+                다양한 분야에 전문성을 가진 AI in X 스터디 구성원들을
+                소개합니다. 각 프로필을 클릭하면 AI 활용 스택과 발표 주제를
+                포함한 6개 상세 인터뷰 전체를 확인할 수 있습니다.
+              </p>
+            </div>
+          </header>
+
+          <div class="members-grid" id="members-grid">
+            <!-- Populated by js/app.js from MEMBERS + Next Domain Card -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Study Topics & Open Track -->
+      <section
+        class="section section--white"
+        id="topics"
+        aria-labelledby="topics-heading"
+      >
+        <div class="container">
+          <header class="section-header reveal">
+            <div class="section-header__meta">
+              <p class="section-kicker">03 / RESEARCH TRACKS</p>
+            </div>
+            <div class="section-header__main">
+              <h2 class="section-title" id="topics-heading">
+                분야별 스터디 주제
+              </h2>
+              <p class="section-lead">
+                각 도메인의 실전 과제에서 도출된 6대 중점 세션 트랙입니다.
+                도메인 필터로 관심 주제를 탐색하고, 연관 멤버의 상세 프로필을
+                바로 확인할 수 있습니다.
+              </p>
+            </div>
+          </header>
+
+          <!-- Domain Filter Tabs -->
+          <div class="topics-controls reveal">
+            <div
+              class="filter-tabs"
+              id="topic-tabs"
+              role="tablist"
+              aria-label="도메인별 스터디 주제 필터"
+            >
+              <!-- Populated by js/app.js from TOPIC_FILTERS -->
+            </div>
+            <p
+              class="sr-only"
+              id="topics-live-status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></p>
+          </div>
+
+          <!-- Topics Grid -->
+          <div
+            class="topics-grid"
+            id="topics-grid"
+            role="tabpanel"
+            aria-labelledby="tab-all"
+          >
+            <!-- Populated by js/app.js from TOPICS -->
+          </div>
+
+          <!-- Open Track Banner ("What else...?") -->
+          <aside
+            class="open-track-banner surface-navy reveal"
+            id="open-track-banner"
+            aria-labelledby="open-track-heading"
+          >
+            <div class="open-track-banner__content">
+              <p class="open-track-banner__kicker" id="open-track-kicker">
+                OPEN TRACK · 07+
+              </p>
+              <h3 class="open-track-banner__title" id="open-track-heading">
+                What else...?
+              </h3>
+              <p class="open-track-banner__desc" id="open-track-desc">
+                스터디 진행과 새로운 도메인(X)의 합류에 따라 아젠다는
+                지속적으로 확장됩니다.<br />법률, 의료, 디자인, 마케팅 등 당신의
+                분야에서 탐구하고 싶은 AI 주제를 제안해 주세요.
+              </p>
+            </div>
+            <div class="open-track-banner__action">
+              <a
+                id="open-track-cta"
+                href="https://forms.gle/ai-in-x-study-apply-placeholder"
+                class="btn btn--on-dark"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="AI in X 스터디 지원서 열기"
+              >
+                <span id="open-track-cta-label">새 주제 제안 &amp; 참여하기</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Section 4: Join Us (Participation Guide + Google Form Application Card) -->
+      <section
+        class="section section--paper"
+        id="join-us"
+        aria-labelledby="join-us-heading"
+      >
+        <div class="container">
+          <div class="join-layout">
+            <!-- Left Column (5 cols): Guide & Participation Tracks -->
+            <div class="join-info reveal">
+              <p class="section-kicker">04 / JOIN US</p>
+              <h2 class="section-title join-info__title" id="join-us-heading">
+                새로운 'X'로 함께할 분을 찾습니다
+              </h2>
+              <p class="section-lead join-info__lead">
+                기존 5개 도메인 외 법률, 의료, 디자인, 마케팅, 제조 등 다양한
+                현업의 실무자·연구자와 함께 AI 활용의 지평을 넓혀갑니다.
+              </p>
+
+              <div class="join-options" id="join-options">
+                <!-- Populated by js/app.js from JOIN_OPTIONS -->
+              </div>
+
+              <ul class="join-culture" aria-label="스터디 운영 문화">
+                <li>정기 세션 및 필요 시 특별 세션 운영 · 구성원 순번 발표 및 심층 토의</li>
+                <li>실무 적용과 검증에 초점을 둔 솔직한 경험 공유</li>
+                <li>기존 5개 도메인 외 새로운 전문 영역(X) 적극 환영</li>
+              </ul>
+            </div>
+
+            <!-- Right Column (5 cols): Streamlined Google Form CTA Card -->
+            <div class="join-application reveal" data-reveal-delay="80">
+              <div class="application-card">
+                <div class="application-card__header">
+                  <p class="application-card__kicker">APPLICATION</p>
+                  <h3 class="application-card__title">
+                    AI in X 스터디 참여 지원
+                  </h3>
+                  <p class="application-card__lead">
+                    정기 멤버 합류, 게스트 세션 발표, 도메인 교류 제안 모두 아래
+                    지원서를 통해 접수받고 있습니다.
+                  </p>
+                </div>
+
+                <!-- Application Primary CTA -->
+                <div class="application-card__cta">
+                  <a
+                    id="google-form-cta"
+                    class="btn btn--primary btn--full"
+                    href="https://forms.gle/ai-in-x-study-apply-placeholder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="AI in X 스터디 지원서 열기"
+                  >
+                    <span>지금 지원하기</span>
+                    <span class="btn__arrow" aria-hidden="true">→</span>
+                  </a>
+                  <p class="application-card__note">
+                    새 창에서 지원서 페이지가 열립니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer surface-navy">
+      <div class="container">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a
+              href="#hero"
+              class="site-footer__wordmark"
+              aria-label="AI in X Study 맨 위로 이동"
+            >
+              AI in <em class="site-footer__x">X</em> Study
+            </a>
+            <p class="site-footer__meta" id="footer-tagline">
+              Cross-Domain AI Study Group
+            </p>
+          </div>
+
+          <div class="site-footer__nav-wrap">
+            <nav class="site-footer__nav" aria-label="푸터 바로가기">
+              <a href="#purpose" class="site-footer__link">스터디 목적</a>
+              <a href="#members" class="site-footer__link">멤버 소개</a>
+              <a href="#topics" class="site-footer__link">스터디 주제</a>
+              <a href="#join-us" class="site-footer__link">Join Us</a>
+            </nav>
+            <a
+              href="#hero"
+              class="site-footer__top-btn"
+              aria-label="페이지 최상단으로 이동"
+              >Top ↑</a
+            >
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p id="footer-copyright">
+            © 2026 AI in X Study. All rights reserved.
+          </p>
+          <p id="footer-domains">
+            Consulting · Research · Development · Investment · Solopreneur
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Member Detail Slide-over Editorial Drawer -->
+    <div class="drawer-backdrop" id="member-drawer-backdrop" hidden></div>
+    <aside
+      class="member-drawer"
+      id="member-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="drawer-member-name"
+      hidden
+    >
+      <div class="member-drawer__header">
+        <div class="member-drawer__top-meta">
+          <span class="member-drawer__counter" id="drawer-member-meta"
+            >MEMBER PROFILE · 01 / 05</span
+          >
+          <button
+            type="button"
+            class="icon-close-btn"
+            id="drawer-close-btn"
+            aria-label="상세 프로필 닫기"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 5L15 15M15 5L5 15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="square"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="member-drawer__identity">
+          <div
+            class="monogram monogram--lg"
+            id="drawer-member-monogram"
+            aria-hidden="true"
+          >
+            HY
+          </div>
+          <div class="member-drawer__title-group">
+            <h2 class="member-drawer__name" id="drawer-member-name">조하영</h2>
+            <p class="member-drawer__domain" id="drawer-member-domain">
+              AI in Consulting · 컨설팅
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-drawer__body" id="drawer-member-body" tabindex="0">
+        <!-- Populated dynamically by js/app.js with all 6 PRD sections -->
+      </div>
+
+      <div class="member-drawer__footer">
+        <button
+          type="button"
+          class="drawer-nav-btn"
+          id="drawer-prev-btn"
+          aria-label="이전 멤버 프로필 보기"
+        >
+          <span aria-hidden="true">←</span>
+          <span id="drawer-prev-name">조한솔</span>
+        </button>
+
+        <span class="member-drawer__index" id="drawer-footer-index"
+          >1 / 4</span
+        >
+
+        <button
+          type="button"
+          class="drawer-nav-btn"
+          id="drawer-next-btn"
+          aria-label="다음 멤버 프로필 보기"
+        >
+          <span id="drawer-next-name">박노아</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Scripts (Relative Paths) -->
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
