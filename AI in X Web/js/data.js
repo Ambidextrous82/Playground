@@ -88,7 +88,7 @@
       summaryTrack: "유지보수 가능 MVP (Harness)",
       toolTags: ["Codex", "Claude"],
       intro:
-        "연세대학교 경영학과를 졸업해 4.5년간 VC 투자 경력을 쌓았으며, 현재 버클리 MBA 과정을 밟고 있습니다.",
+        "연세대학교 경영학과를 졸업해 4.5년간 VC 투자 경력을 쌓았으며, 현재 버클리 MBA 과정을 밟으며 모바일 앱 개발을 병행하고 있습니다.",
       aiTools: "Codex, Claude",
       currentUsage:
         "사업용 앱·게임과 리소스 제작 / 자체 하네스를 활용한 개발 / 유지보수 가능한 앱 개발을 지향",
