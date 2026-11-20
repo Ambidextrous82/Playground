@@ -109,7 +109,7 @@
       summaryTrack: "업무 생산성 향상 위한 자동화",
       toolTags: ["ChatGPT", "Claude"],
       intro:
-        "University of Texas at Austin에서 경제학을 전공하고, 현재 KDB Silicon Valley LLC에서 VC 투자 1년차로 일하고 있습니다.",
+        "University of Texas at Austin에서 경제학을 전공하고 Kearney에서 컨설팅 경험을 쌓았으며, 현재 KDB Silicon Valley LLC에서 VC 투자 심사역으로 근무하고 있습니다.",
       aiTools: "ChatGPT, Claude",
       currentUsage:
         "ChatGPT로 투자메모 리서치 단축 / Claude로 재무추정 로직 검증과 작성 가이드 확보",
